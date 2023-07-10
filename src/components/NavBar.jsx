@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import logo from './assets/icono_entel.png';
+import logo from '../assets/icono_entel.png';
 
+/////////////////styles/////////////////////////////
 const NavbarWrapper = styled.nav`
   position: fixed;
   top: 0;
@@ -44,6 +45,7 @@ const NavbarItem = styled.a`
 
 `;
 
+/////////////////code/////////////////////////////
 const Navbar = ({ onFormClick, onListClick }) => {
   return (
     <NavbarWrapper>

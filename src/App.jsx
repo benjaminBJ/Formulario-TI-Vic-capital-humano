@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import GlobalStyles from './styledComponents';
-import Lista from './listaFormulario';
-import Formulario from './Formulario';
-import Navbar from './NavBar';
-import styled from 'styled-components'
-//import './App.css'
+import GlobalStyles from './styles/styledComponents';
+import Lista from './components/listaFormulario';
+import Formulario from './components/Formulario';
+import Navbar from './components/NavBar';
+import styled from 'styled-components';
 
 const AppWrapper = styled.div`
   margin-top: 50px;

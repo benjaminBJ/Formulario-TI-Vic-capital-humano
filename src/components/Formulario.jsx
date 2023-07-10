@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import imagen from './assets/img_formulario_prueba.png';
 
+import imagen from '../assets/img_formulario_prueba.png';
+
+/////////////////styles/////////////////////////////
 const FormWrapper = styled.div`
   
   margin: 0 auto;
@@ -87,6 +89,7 @@ const FormButton = styled.button`
   cursor: pointer;
   
 `;
+/////////////////code/////////////////////////////
 const marcas = ['Nissan', 'Citroen', 'Peugeot', 'Kia', 'Susuki'];
 const modelosPorMarca = {
   'Nissan': ['NP300', 'Versa'],
@@ -96,19 +99,27 @@ const modelosPorMarca = {
   'Susuki': ['Spresso', 'Alto'],
 };
 const Formulario = () => {
+  const [id, setId] = useState('');
   const [rut, setRut] = useState('');
   const [nombre, setNombre] = useState('');
   const [patente, setPatente] = useState('');
   const [marca, setMarca] = useState('');
   const [modelo, setModelo] = useState('');
   const [precio, setPrecio] = useState('');
+  const [fecha,setFecha] = useState('');
   const [error, setError] = useState('');
 
   //Manejo de datos en localStorage
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validación de datos
+    //id y timestamp para la solicitud
+    const id = uuidv4();
+    const fecha = new Date().toISOString();
+
+
+
+    // Validación de datos, completos
     if (!nombre || !rut || !patente || !marca || !modelo || !precio) {
       setError('Todos los campos son obligatorios.');
       return;
@@ -140,12 +151,14 @@ const Formulario = () => {
     setError('');
     //Envío de información
     const newData = {
+      id,
       rut,
       nombre,
       patente,
       marca,
       modelo,
       precio,
+      fecha
     };
 
     const existingData = localStorage.getItem('rent-a-car-data');

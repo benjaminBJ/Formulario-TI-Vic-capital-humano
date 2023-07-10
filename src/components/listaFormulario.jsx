@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
+/////////////////styles/////////////////////////////
 const ListContainer= styled.div`
   border-top: 2px solid #c9c9c9;
   border-bottom: 2px solid #c9c9c9;
@@ -38,7 +38,7 @@ const DeleteButton = styled.button`
   border: none;
   cursor: pointer;
 `;
-
+/////////////////code/////////////////////////////
 const Lista = ({ data, onRemove }) => {
   const recentData = data.slice(-10);
   return (
