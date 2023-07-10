@@ -4,7 +4,7 @@ import Lista from './components/listaFormulario';
 import Formulario from './components/Formulario';
 import Navbar from './components/NavBar';
 import styled from 'styled-components';
-
+/////////////////styles/////////////////////////////
 const AppWrapper = styled.div`
   margin-top: 50px;
   display: flex;
@@ -12,6 +12,7 @@ const AppWrapper = styled.div`
   align-items: center;
  
 `;
+/////////////////code/////////////////////////////
 const App = () => {
   const [data, setData] = useState([]);
   const [viewOption, setViewOption] = useState('formulario');
